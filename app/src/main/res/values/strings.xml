@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">ShopBack</string>
+
+    <string name="error_loading_movies">There seems to have been some error.</string>
+
+</resources>
+

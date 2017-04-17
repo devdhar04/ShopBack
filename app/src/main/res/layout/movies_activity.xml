@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+        name="mainViewModel"
+        type="com.android.shopback.viewmodel.MovieViewModel"/>
+  </data>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+
+      <ProgressBar
+          android:id="@+id/progress_movie"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:visibility="@{mainViewModel.movieProgress}"/>
+
+      <TextView
+          android:id="@+id/label_status"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="@{mainViewModel.messageLabel}"
+          app:visibility="@{mainViewModel.movieLabel}"/>
+
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/list_movie"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:clipToPadding="false"
+          android:scrollbars="vertical"
+
+          app:visibility="@{mainViewModel.movieRecycler}"
+          tools:listitem="@layout/movies_list_item"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+</layout>
